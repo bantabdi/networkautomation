@@ -1,0 +1,20 @@
+---
+- name: Configure banner
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: Configure banner on IOS
+    cisco.ios.ios_banner:
+      banner: login
+      text: | 
+        THIS IS A TEST SYSTEM. DO AS YOU PLEASE!
+      state: present
+    when: "ansible_network_os == 'cisco.ios.ios'"
+
+  - name: Configure banner on EOS
+    arista.eos.eos_banner:
+      banner: login
+      text: |
+        THIS IS A TEST SYSTEM. DO AS YOU PLEASE!
+      state: present
+    when: "ansible_network_os == 'arista.eos.eos'"
