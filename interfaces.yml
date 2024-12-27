@@ -6,7 +6,7 @@
   - name: Configure lo99 on EOS
     arista.eos.eos_l3_interfaces:
       config:
-        - name: LoopBack99
+        - name: loopback99
           ipv4:
             - address: 9.9.9.9/32
         - name: Ethernet3
@@ -15,15 +15,15 @@
         - ipv4:
             - address: dhcp
           name: Management1
-      state: overridden
+      state: merged
     when: "ansible_network_os == 'arista.eos.eos'"
 
   - name: Configure lo99 on IOS
     cisco.ios.ios_l3_interfaces:
       config:
-        - name: LoopBack99
+        - name: loopback99
           ipv4:
             - address: 99.9.99.99/32
-      state: overridden
+      state: merged
     when: "ansible_network_os == 'cisco.ios.ios'"
 
