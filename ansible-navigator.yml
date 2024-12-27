@@ -3,7 +3,7 @@ ansible-navigator:
   ansible:
     inventory:
       entries:
-      - /home/automation/network_automation/inventory
+      - /home/automation/network_automation/networkautomation/inventory
       help: false
   execution-environment:
     container-engine: podman
