@@ -1,0 +1,28 @@
+---
+- name: CONFIGURE VLANS
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: VLANS on IOS
+    cisco.ios.ios_vlans:
+      config:
+        - name: Vlan_15
+          vlan_id: 15
+        - name: Vlan_25
+          vlan_id: 25
+        - name: Vlan_35
+          vlan_id: 35
+      state: merged
+    when: "ansible_network_os == 'cisco.ios.ios'"
+      
+  - name: VLANS on EOS
+    cisco.ios.ios_vlans:
+      config:
+        - name: Vlan_15
+          vlan_id: 15
+        - name: Vlan_25
+          vlan_id: 25
+        - name: Vlan_35
+          vlan_id: 35
+      state: merged
+    when: "ansible_network_os == 'arista.eos.eos'"

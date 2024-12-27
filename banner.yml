@@ -8,7 +8,7 @@
       banner: login
       text: | 
         THIS IS A TEST SYSTEM. DO AS YOU PLEASE!
-      state: present
+      state: absent
     when: "ansible_network_os == 'cisco.ios.ios'"
 
   - name: Configure banner on EOS
@@ -16,5 +16,5 @@
       banner: login
       text: |
         THIS IS A TEST SYSTEM. DO AS YOU PLEASE!
-      state: present
+      state: absent
     when: "ansible_network_os == 'arista.eos.eos'"

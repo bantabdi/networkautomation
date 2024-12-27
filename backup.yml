@@ -1,0 +1,16 @@
+---
+- name: Backup configuration
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: IOS BACKUP
+    cisco.ios.ios_config:
+      backup: true
+    when: "ansible_network_os == 'cisco.ios.ios'"
+
+  - name: EOS BACKUP
+    arista.eos.eos_config:
+      backup: true
+    when: "ansible_network_os == 'arista.eos.eos'"
+
+

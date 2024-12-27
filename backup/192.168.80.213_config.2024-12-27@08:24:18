@@ -1,0 +1,53 @@
+! Command: show running-config
+! device: S2 (vEOS-lab, EOS-4.33.0F)
+!
+! boot system flash:/vEOS-lab.swi
+!
+no aaa root
+!
+username arista privilege 15 secret sha512 $6$oCrFIbwsfVoY8pZC$do.vC8b221uO.7JvevG730q8nc9BBdJoHHIiv9jqSjS0ir9fvIRorjf6x5F/bC1Nka4Fjl8yTZufi.YI/ypAy1
+!
+no service interface inactive port-id allocation disabled
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+hostname S2
+!
+spanning-tree mode mstp
+!
+system l1
+   unsupported speed action error
+   unsupported error-correction action error
+!
+interface Ethernet1
+   no switchport
+   ip address 192.168.80.213/24
+!
+interface Ethernet2
+!
+interface Ethernet3
+!
+interface Ethernet4
+!
+interface Ethernet5
+!
+interface Ethernet6
+!
+interface Ethernet7
+!
+interface Ethernet8
+!
+interface Management1
+!
+no ip routing
+!
+router multicast
+   ipv4
+      software-forwarding kernel
+   !
+   ipv6
+      software-forwarding kernel
+!
+end
