@@ -5,6 +5,8 @@ ansible-navigator:
       entries:
       - /home/automation/network_automation/networkautomation/inventory
       help: false
+    config:
+      path: ./ansible.cfg
   execution-environment:
     container-engine: podman
     enabled: true
