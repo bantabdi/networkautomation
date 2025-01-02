@@ -1,0 +1,14 @@
+---
+- name: Gather Arista facts
+  hosts: eos
+  gather_facts: false
+  tasks:
+  - name: Gather EOS facts
+    arista.eos.eos_facts:
+      gather_subset:
+        - all
+    register: result
+
+  - name: Display result
+    ansible.builtin.debug:
+      var: "ansible_facts['net_config'] | split('\n')"
