@@ -7,7 +7,7 @@
     cisco.ios.ios_banner:
       banner: login
       text: | 
-        THIS IS A TEST SYSTEM. DO AS YOU PLEASE!
+        THIS IS A TEST SYSTEM. DO AS YOU PLEASE! NO RESTRICTIONS WHATSOEVER
       state: present
     when: "ansible_network_os == 'cisco.ios.ios'"
 
@@ -15,6 +15,6 @@
     arista.eos.eos_banner:
       banner: login
       text: |
-        THIS IS A TEST SYSTEM. DO AS YOU PLEASE!
+        THIS IS A TEST SYSTEM. DO AS YOU PLEASE! NO RESTRICTIONS WHATSOEVER
       state: present
     when: "ansible_network_os == 'arista.eos.eos'"
