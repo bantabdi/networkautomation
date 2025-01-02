@@ -1,0 +1,4 @@
+---
+- src: git+https://github.com/shadowman-lab/shadowman.reports.git
+  scm: git
+
