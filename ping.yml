@@ -1,0 +1,14 @@
+---
+- name: Test connectivity
+  hosts: 192.168.80.212
+  gather_facts: false
+  tasks:
+  - name: Ping ios devices
+    cisco.ios.ios_ping:
+      dest: 192.168.80.128
+    register: result_ping
+
+  - name: Display results
+    ansible.builtin.debug:
+      var: result_ping
+
